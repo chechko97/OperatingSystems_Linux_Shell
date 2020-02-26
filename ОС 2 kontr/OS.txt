@@ -1,0 +1,40 @@
+#!/bin/bash
+
+number_of_proces_param= $(ps -u $1 | wc -l)
+while read line ; do
+    temp_number_of_proces=$(ps -u $line | wc -l)
+    if [[ $temp_number_of_proces -gt $number_of_proces_param ]] ; then
+    echo $line
+    fi
+done <<< $(cat /etc/passwd | cut -d: -f1)
+
+num_proces=$(ps -e | wc -l)
+all_time=$(ps -eo etimes | numsum)
+average=$(($all_time/$num_proces))
+echo $average
+
+double_average=$(($average*2))
+while read i ; do
+    time=$(echo $i | cut -d" " -f2)
+    pid=$(echo $i | cut -d" " -f3)
+    if [[ $time -gt $double_average ]] ; then
+       kill -9 $pid
+    fi
+done <<< $(ps -u $1 -o etimes,pid | tr -s " ")
+
+..................................................................................
+
+#!/bin/bash
+max_seconds=0
+while read line ; do
+    seconds_lmf=$(find $(åcho $line | cut -d ' ' -f2) -type f -printf "%T@ %f\n" | sort -rn | head -n 1 | cut -d" " -f1)
+    echo $seconds_lmf
+    if [[ $seconds_lmf -gt $max_seconds ]] ; then
+       max_seconds=$seconds_lmf
+       user=$(echo $line | cut -d ' ' -f1)
+       filename=$(find $(åcho $line | cut -d ' ' -f2) -type f -printf "%T@ %f\n" | sort -rn | head -n1 | cut -d" " -f2)
+    fi
+done <<< $(cat /etc/passwd | cut -d: -f1,6)
+
+echo $user $filename
+

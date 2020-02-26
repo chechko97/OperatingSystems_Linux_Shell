@@ -1,0 +1,12 @@
+2019-05-05 06:26:54 orthanc rsyslogd: rsyslogd was HUPed
+2019-05-06 06:30:32 orthanc rsyslogd: rsyslogd was HUPed
+2019-05-06 10:48:30 orthanc kernel: [1725379.728871] Chrome_~dThread[876]: segfault
+2019-05-06 10:48:31 orthanc kernel: [1725379.728871] Chrome_~dThread[876]: segfault
+2019-05-06 10:48:32 orthanc kernel: [1725379.728871] Chrome_~dThread[876]: segfault
+2019-05-06 10:48:33 orthanc kernel: [1725379.728871] Chrome_~dThread[876]: segfault
+2019-05-06 10:48:34 orthanc kernel: [1725379.728871] Chrome_~dThread[876]: segfault
+2019-05-06 10:48:35 orthanc kernel: [1725379.728871] Chrome_~dThread[876]: segfault
+2019-05-06 10:48:37 orthanc kernel: [1725379.728871] Chrome_~dThread[876]: segfault
+2019-05-06 10:48:38 orthanc kernel: [1725379.728871] Chrome_~dThread[876]: segfault
+2019-05-06 10:48:40 orthanc kernel: [1725379.728871] Chrome_~dThread[876]: segfault
+2019-05-06 10:48:42 orthanc kernel: [1725379.728871] Chrome_~dThread[876]: segfault
